@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzaria Sabor & Tradição</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="#inicio"><span class="logo-emoji">🍕</span><span>PIZZARIA<small>SABOR & TRADIÇÃO</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    <nav id="navMenu">
+      <a class="active" href="#inicio">Início</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="cart-button" id="verCarrinho">🛒 <span id="cartCount">0</span></button>
+    <a class="btn btn-topo" href="#cardapio">Faça seu pedido</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">PIZZA É SEMPRE UMA BOA IDEIA</p>
+        <h1>Sabor, qualidade e <span>muito mais!</span></h1>
+        <p class="hero-text">Aqui você encontra pizzas deliciosas, feitas com ingredientes frescos e muito carinho.</p>
+        <a class="btn" href="#cardapio">🍕 Ver cardápio</a>
+      </div>
+    </section>
+
+    <section class="section cardapio" id="cardapio">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow red">NOSSO CARDÁPIO</p>
+          <h2>Nossas Pizzas</h2>
+          <p>Tradição e muito sabor em cada fatia. Escolha a sua favorita!</p>
+        </div>
+        <div class="filtros" aria-label="Filtrar pizzas">
+          <button class="filtro ativo" data-categoria="todas">Todas</button>
+          <button class="filtro" data-categoria="tradicional">Tradicionais</button>
+          <button class="filtro" data-categoria="especial">Especiais</button>
+          <button class="filtro" data-categoria="doce">Doces</button>
+        </div>
+      </div>
+
+      <div class="conteudo-cardapio">
+        <div class="pizza-grid" id="pizzaGrid">
+          <article class="pizza-card" data-categoria="tradicional" data-nome="Mussarela" data-preco="39.90">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=85" alt="Pizza de mussarela">
+            <div class="pizza-info"><h3>Mussarela</h3><p>Molho de tomate, mussarela e orégano.</p><strong>R$ 39,90</strong><button class="adicionar">🛒 Adicionar</button></div>
+          </article>
+          <article class="pizza-card" data-categoria="tradicional" data-nome="Calabresa" data-preco="44.90">
+            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=700&q=85" alt="Pizza de calabresa">
+            <div class="pizza-info"><h3>Calabresa</h3><p>Molho de tomate, mussarela, calabresa e cebola.</p><strong>R$ 44,90</strong><button class="adicionar">🛒 Adicionar</button></div>
+          </article>
+          <article class="pizza-card" data-categoria="especial" data-nome="Quatro Queijos" data-preco="49.90">
+            <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=700&q=85" alt="Pizza de quatro queijos">
+            <div class="pizza-info"><h3>Quatro Queijos</h3><p>Mussarela, provolone, parmesão e gorgonzola.</p><strong>R$ 49,90</strong><button class="adicionar">🛒 Adicionar</button></div>
+          </article>
+          <article class="pizza-card" data-categoria="especial" data-nome="Portuguesa" data-preco="46.90">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=85" alt="Pizza portuguesa">
+            <div class="pizza-info"><h3>Portuguesa</h3><p>Presunto, ovo, cebola, azeitona e mussarela.</p><strong>R$ 46,90</strong><button class="adicionar">🛒 Adicionar</button></div>
+          </article>
+          <article class="pizza-card" data-categoria="doce" data-nome="Chocolate" data-preco="42.90">
+            <img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?auto=format&fit=crop&w=700&q=85" alt="Pizza doce de chocolate">
+            <div class="pizza-info"><h3>Chocolate</h3><p>Chocolate cremoso e chocolate granulado.</p><strong>R$ 42,90</strong><button class="adicionar">🛒 Adicionar</button></div>
+          </article>
+          <article class="pizza-card" data-categoria="doce" data-nome="Romeu e Julieta" data-preco="43.90">
+            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=700&q=85" alt="Pizza doce">
+            <div class="pizza-info"><h3>Romeu e Julieta</h3><p>Queijo cremoso com goiabada derretida.</p><strong>R$ 43,90</strong><button class="adicionar">🛒 Adicionar</button></div>
+          </article>
+        </div>
+
+        <aside class="delivery">
+          <div class="delivery-icon">🍕</div>
+          <h3>Peça também pelo nosso delivery</h3>
+          <p>É rápido, prático e seguro!</p>
+          <ul><li>🚚 Entrega rápida</li><li>💳 Pagamento facilitado</li><li>📍 Acompanhe seu pedido</li></ul>
+          <button class="btn whatsapp" id="whatsappBtn">Fazer pedido no WhatsApp</button>
+          <p class="small-note">Configure seu número no arquivo <b>script.js</b>.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section sobre" id="sobre">
+      <div><p class="eyebrow red">SOBRE NÓS</p><h2>Mais que uma pizzaria, uma experiência!</h2></div>
+      <p>Somos apaixonados por pizza e acreditamos que cada fatia pode tornar o seu dia mais especial. Por isso, usamos ingredientes de qualidade e muito carinho no preparo de cada pedido.</p>
+    </section>
+
+    <section class="contato" id="contato">
+      <h2>Bateu aquela fome?</h2>
+      <p>Escolha sua pizza favorita e faça seu pedido!</p>
+      <a href="#cardapio" class="btn">Ver pizzas</a>
+    </section>
+  </main>
+
+  <div class="cart-panel" id="cartPanel" aria-live="polite">
+    <div class="cart-header"><h2>Seu pedido</h2><button id="fecharCarrinho" aria-label="Fechar carrinho">✕</button></div>
+    <div id="cartItems"><p class="empty-cart">Seu carrinho está vazio.</p></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+    <button class="btn checkout" id="finalizarPedido">Finalizar pedido</button>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <footer><p>© 2026 Pizzaria Sabor & Tradição. Feito com ❤️ e muito queijo.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>

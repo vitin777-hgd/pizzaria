@@ -1,0 +1,639 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --vermelho: #C62828;
+    --amarelo: #FFC107;
+    --preto: #151515;
+    --cinza: #242424;
+    --branco: #F8F8F8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #111;
+    color: var(--branco);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+/* CABEÇALHO */
+
+.topo {
+    min-height: 78px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    justify-content: space-between;
+    background: rgba(15, 15, 15, 0.97);
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.logo-emoji {
+    font-size: 37px;
+}
+
+.logo small {
+    display: block;
+    color: var(--amarelo);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--amarelo);
+}
+
+/* BOTÕES */
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 30px;
+    background: var(--vermelho);
+    color: white;
+    padding: 13px 24px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.btn:hover,
+.adicionar:hover {
+    background: #e53935;
+    transform: translateY(-2px);
+}
+
+.btn-topo {
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.cart-button {
+    border: 0;
+    color: white;
+    background: transparent;
+    font-size: 22px;
+    position: relative;
+}
+
+#cartCount {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--vermelho);
+    border-radius: 50%;
+    font-size: 11px;
+    min-width: 19px;
+    height: 19px;
+    display: grid;
+    place-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+}
+
+/* DESTAQUE PRINCIPAL */
+
+.hero {
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    padding: 55px 8%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92),
+            rgba(0, 0, 0, 0.63) 48%,
+            rgba(0, 0, 0, 0.1)
+        ),
+        url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=90')
+        center/cover;
+}
+
+.hero-content {
+    max-width: 560px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.red {
+    color: var(--amarelo);
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.08;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--amarelo);
+}
+
+.hero-text {
+    max-width: 440px;
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+/* SEÇÕES */
+
+.section {
+    padding: 55px 7%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.2;
+    margin-bottom: 7px;
+}
+
+.section-heading p:not(.eyebrow) {
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* FILTROS DO CARDÁPIO */
+
+.filtros {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filtro {
+    color: #eee;
+    background: #1c1c1c;
+    border: 1px solid #3b3b3b;
+    border-radius: 24px;
+    padding: 9px 17px;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.filtro:hover,
+.filtro.ativo {
+    background: var(--vermelho);
+    border-color: var(--vermelho);
+}
+
+/* CARDÁPIO */
+
+.conteudo-cardapio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.pizza-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.pizza-card {
+    background: linear-gradient(145deg, #202020, #141414);
+    border: 1px solid #383838;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.pizza-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--amarelo);
+}
+
+.pizza-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+}
+
+.pizza-info {
+    padding: 13px;
+}
+
+.pizza-info h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.pizza-info p {
+    min-height: 48px;
+    color: #c5c5c5;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.pizza-info strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.adicionar {
+    width: 100%;
+    border: 0;
+    border-radius: 6px;
+    background: var(--vermelho);
+    color: white;
+    padding: 9px 5px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+/* ENTREGA */
+
+.delivery {
+    border: 1px solid var(--vermelho);
+    border-radius: 10px;
+    padding: 22px 18px;
+    background: radial-gradient(
+        circle at top right,
+        #332020,
+        #171717 60%
+    );
+}
+
+.delivery-icon {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.delivery h3 {
+    font-size: 17px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.delivery p {
+    color: #ddd;
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+.delivery ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.delivery li {
+    font-size: 12px;
+    margin: 13px 0;
+}
+
+.whatsapp {
+    width: 100%;
+    padding: 11px 8px;
+    font-size: 12px;
+    border-radius: 7px;
+}
+
+.delivery .small-note {
+    color: #999;
+    font-size: 10px;
+}
+
+/* SOBRE A PIZZARIA */
+
+.sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    border-top: 1px solid #292929;
+}
+
+.sobre > p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* CONTATO */
+
+.contato {
+    text-align: center;
+    padding: 50px 20px 60px;
+    background: linear-gradient(135deg, #261313, #151515);
+}
+
+.contato h2 {
+    font-size: 30px;
+}
+
+.contato p {
+    color: #ccc;
+    margin: 8px 0 20px;
+}
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+    border-top: 1px solid #303030;
+    padding: 20px;
+    color: #999;
+    font-size: 12px;
+}
+
+/* CARRINHO */
+
+.cart-panel {
+    position: fixed;
+    z-index: 30;
+    right: -420px;
+    top: 0;
+    width: min(390px, 100%);
+    height: 100vh;
+    background: #1a1a1a;
+    padding: 25px;
+    box-shadow: -10px 0 35px #0008;
+    transition: right 0.25s;
+    overflow-y: auto;
+}
+
+.cart-panel.aberto {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #383838;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.cart-header button {
+    color: white;
+    background: transparent;
+    border: 0;
+    font-size: 22px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+    font-size: 13px;
+}
+
+.cart-item small {
+    color: #bbb;
+    display: block;
+}
+
+.quantidade {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantidade button {
+    background: #333;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+}
+
+.empty-cart {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-size: 17px;
+}
+
+.cart-total strong {
+    color: var(--amarelo);
+}
+
+.checkout {
+    width: 100%;
+}
+
+/* FUNDO DO CARRINHO */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 20;
+    display: none;
+}
+
+.overlay.visivel {
+    display: block;
+}
+
+/* TABLETS E TELAS MENORES */
+
+@media (max-width: 1200px) {
+    .pizza-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pizza-card img {
+        height: 170px;
+    }
+}
+
+@media (max-width: 850px) {
+    .topo {
+        padding: 0 4%;
+        gap: 14px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    .btn-topo {
+        display: none;
+    }
+
+    .conteudo-cardapio {
+        grid-template-columns: 1fr;
+    }
+
+    .delivery {
+        max-width: none;
+    }
+
+    .section {
+        padding: 40px 5%;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .topo {
+        min-height: 70px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo-emoji {
+        font-size: 30px;
+    }
+
+    .logo small {
+        font-size: 9px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #171717;
+        padding: 18px;
+        flex-direction: column;
+        border-bottom: 1px solid #333;
+    }
+
+    nav.aberto {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 420px;
+        padding: 40px 6%;
+        background-position: 58% center;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .pizza-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .pizza-card img {
+        height: 115px;
+    }
+
+    .pizza-info {
+        padding: 10px;
+    }
+
+    .pizza-info h3 {
+        font-size: 14px;
+    }
+
+    .pizza-info p {
+        font-size: 10px;
+        min-height: 58px;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .filtros {
+        gap: 6px;
+    }
+
+    .filtro {
+        padding: 8px 12px;
+    }
+}
